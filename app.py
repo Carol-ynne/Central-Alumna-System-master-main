@@ -195,8 +195,8 @@ def upload_image():
     return render_template('newreport.html')
 
 @app.route('/')
-def land():
-    return render_template('land.html')
+def index():
+    return render_template('index.html')
 
 
 
