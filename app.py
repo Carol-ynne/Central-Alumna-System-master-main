@@ -1,7 +1,7 @@
 import sqlite3
-import os
+
 from PIL import Image
-import secrets
+
 import urllib.request, urllib.parse
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask, redirect, render_template, url_for,request,jsonify,get_flashed_messages
@@ -177,6 +177,15 @@ def addalumni():
 @login_required
 def department():
     return render_template('department.html')
+
+
+def create_app():
+    app = Flask(__name__)
+
+    # Add your Flask app configurations here
+    # For example, you might configure your app's database, routes, etc.
+
+    return app
 
 @app.route('/newreport')
 @login_required
