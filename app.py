@@ -1,4 +1,4 @@
-
+import sqlite3
 import os
 from PIL import Image
 import secrets
