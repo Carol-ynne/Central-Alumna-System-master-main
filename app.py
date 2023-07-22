@@ -34,7 +34,7 @@ ma = Marshmallow(app)
 
 
 login_manager = LoginManager(app)
-login_manager.login_view = "login"
+login_manager.login_view = "ulogin"
 login_manager.login_message_category = "info"
 migrate = Migrate(app, db)
 from forms import *
@@ -230,9 +230,7 @@ def usersearch():
             print(posts)   
     return render_template("usersearch.html", form=form, posts=posts)
 
-@app.route('/userlogin')
-def userlogin():
-    return render_template('userlogin.html', title="userlogin")
+
 
 @app.route('/year', methods=['GET', 'POST'])
 @login_required
@@ -506,7 +504,7 @@ def usersignup():
             login_user(user, remember=True)
             print(current_user)
             flash(f'' + user.email +', your account has been created ', 'success')
-            return redirect(url_for('userlogin'))
+            return redirect(url_for('ulogin'))
         else:
             print(form.errors)
             
@@ -535,32 +533,32 @@ def ulogin():
 
 
 @app.route('/useryeargroup')
-@login_required
+
 def useryeargroup():
     flash("Welcome to   CentralAlumina ", "success")
     return render_template('useryeargroup.html')
 
 
 @app.route('/usernewform')
-@login_required
+
 def usernewform():
     return render_template('usernewform.html')
 
 
 @app.route('/userschool')
-@login_required
+
 def userschool():
     return render_template('userschool.html')
 
 
 @app.route('/userbase')
-@login_required
+
 def userbase():
     return render_template('userbase.html')
 
 
 @app.route('/userinformation')
-@login_required
+
 def userinformation():
     return render_template('userinformation.html')
 #ending user
