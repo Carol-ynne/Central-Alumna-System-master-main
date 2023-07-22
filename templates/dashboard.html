@@ -34,38 +34,33 @@
     <div id="chart_div"></div>
   </div>
  
-
-  <h4>Recently Graduated</h4>
+<h4>Recent Alumni</h4>
   <br>
   <div class="dashboard-item" data-aos="fade-up" data-aos-delay="1500">
     <table class="table" >
       <thead style="color: #992621;">
         <tr>
-          <th scope="col">#</th>
-          <th scope="col">First</th>
-          <th scope="col">Last</th>
-          <th scope="col">Handle</th>
+          <th scope="col">Name</th>
+          <th scope="col">Index Number</th>
+          <th scope="col">Email</th>
+          <th scope="col">School</th>
         </tr>
       </thead>
+      {%for user in users%} 
+
+      
       <tbody>
         <tr>
-          <th scope="row">1</th>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
+          <td>{{user.fullname}}</td>
+          <td>{{user.indexnumber}}</td>
+          <td>{{user.email}}</td>
+          <td>{{user.school}}</td>
         </tr>
-        <tr>
-          <th scope="row">2</th>
-          <td>Jacob</td>
-          <td>Thornton</td>
-          <td>@fat</td>
-        </tr>
-        <tr>
-          <th scope="row">3</th>
-          <td colspan="2">Larry the Bird</td>
-          <td>@twitter</td>
-        </tr>
+        
       </tbody>
+      
+
+    {% endfor %}  
     </table>
   </div>
  

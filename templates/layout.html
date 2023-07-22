@@ -3,7 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/newstyle.css')}}">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -20,12 +21,14 @@
       <nav class="navbar navbar-expand-lg sticky-top" style="background: #fff; ">
         <div class="container-fluid">
           <a class="navbar-brand">
-            <img src="https://www.central.edu.gh/virgin/images/Central-Uni-logo.png" alt="" width="15%">
+            <img src="https://www.central.edu.gh/static/img/Central-Uni-logo.png" alt="" width="16%">
+             
           </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse me-2" id="navbarSupportedContent" style="width: 100%;">
+
             
             <form class="d-flex " role="search" method='POST' action='{{url_for('search')}}' >
               {{form.hidden_tag()}}

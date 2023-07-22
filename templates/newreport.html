@@ -44,61 +44,31 @@
         <br>
           <div class="dashboard-item" >
             <table class="table">
-                <thead style="text-align: center; color: #992621;">
+              <thead style="text-align: center; color: #992621;">
                 <tr >
-                    <th scope="col">Full Name</th>
-                    <th scope="col">Index Number</th>
-                    <th scope="col">Faculty/School</th>
-                    <th scope="col">Department</th>
-                    <th scope="col-1">View</th>
+                  <th scope="col">Full Name</th>
+                  <th scope="col">Index Number</th>
+                  <th scope="col">Faculty/School</th>
+                  <th scope="col">Department</th>
+                  <th scope="col-1">View</th>
                 </tr>
-                </thead>
+              </thead>
+              {%for user in users%} 
                 <tbody style="text-align: center;">
                 <tr>
-                    <td scope="row">Lebron James</th>
-                    <td>INT/19/01/5837</td>
-                    <td>School of Engineering and Technology</td>
-                    <td>Computer Science $ Information Technology</td>
+                    <td scope="row">{{user.fullname}}</th>
+                    <td>{{user.indexnumber}}</td>
+                    <td>{{user.school}}</td>
+                    <td>{{user.department}}</td>
                     <td>
                       <a href="" class="table-#" style="height: 4vh; border-radius: 5px; width: 2vw; align-items: center; color: black;" >
                         <i class='bx bxs-show bx-border icon'></i>
                       </a>
                     </td>
                 </tr>
-                <tr>
-                    <td scope="row">Steph Curry</th>
-                    <td>Cbs/19/01/3301</td>
-                    <td>Central Business School</td>
-                    <td>Accounting</td>
-                    <td>
-                      <a href="" class="table-#" style="height: 4vh; border-radius: 5px; width: 2vw; align-items: center; color: black;" >
-                        <i class='bx bxs-show bx-border icon'></i>
-                      </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td scope="row">Anthony Davis</th>
-                    <td>Nur/19/01/2211</td>
-                    <td>SCHOOL OF MEDICINE AND HEALTH SCIENCES </td>
-                    <td>NURSING</td>
-                    <td>
-                      <a href="" class="table-#" style="height: 4vh; border-radius: 5px; width: 2vw; align-items: center; color: black;" >
-                        <i class='bx bxs-show bx-border icon'></i>
-                      </a>
-                    </td>
-                </tr>
-                <tr>
-                  <td scope="row">Chris Paul</th>
-                  <td>Arc/19/01/4190</td>
-                  <td>SCHOOL OF ARCHITECTURE AND DESIGN</td>
-                  <td>ARCHITECTURE</td>
-                  <td>
-                    <a href="" class="table-#" style="height: 4vh; border-radius: 5px; width: 2vw; align-items: center; color: black;" >
-                      <i class='bx bxs-show bx-border icon'></i>
-                    </a>
-                  </td>
-              </tr>
-                </tbody>
+                
+              </tbody>
+              {%endfor%}
             </table>
           </div>
         </div>

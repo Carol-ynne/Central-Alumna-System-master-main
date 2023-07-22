@@ -126,13 +126,16 @@ class User(db.Model,UserMixin):
     extra= db.Column(db.String()     )
     image_file = db.Column(db.String(20))
     
-@app.route('/dashboard')
+@app.route('/dashboard', methods=['GET', 'POST'])
 @login_required
 def dashboard():
+    users=User.query.order_by(User.id.desc()).all()
+    print(users)
     if current_user == None:
         # flash("Welcome to the CentralAlumina " + current_user.email, "Success")
         flash(f"There was a problem")
-    return render_template('dashboard.html', title='dashboard')
+        
+    return render_template('dashboard.html', title='dashboard',users=users)
 
 
 
@@ -178,7 +181,9 @@ def department():
 @app.route('/newreport')
 @login_required
 def newreport():
-    return render_template('newreport.html', title="newreport")
+    users=User.query.order_by(User.id.desc()).all()
+    print(users)
+    return render_template('newreport.html', title="newreport0",users=users)
 
 @app.context_processor
 def base():
